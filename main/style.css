@@ -1,0 +1,348 @@
+@font-face {
+  font-family: "Great_Vibes";
+  src: url("fonts/Great_Vibes/GreatVibes-Regular.ttf");
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat/Montserrat-SemiBold.ttf");
+}
+@font-face {
+  font-family: "Montserratregular";
+  src: url("fonts/Montserrat/Montserrat-Regular.ttf");
+}
+@font-face {
+  font-family: "Oswald";
+  src: url("fonts/Oswald/Oswald-Medium.ttf");
+}
+@font-face {
+  font-family: "OswaldBtn";
+  src: url("fonts/Oswald/Oswald-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto/Roboto-Bold.ttf");
+}
+@font-face {
+  font-family: "RobotoRegular";
+  src: url("fonts/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "RobotoMedium";
+  src: url("fonts/Roboto/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: "iBmplanks";
+  src: url("fonts/IBM_Planks/IBMPlexSans-Medium.ttf");
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  max-width: 1440px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 150vh;
+
+  background-image: url("./assets/bp/wd-bg1.png");
+  background-size: 100% 100%;
+  padding: 34px 33px;
+}
+nav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 289px;
+  background: linear-gradient(180deg, #000 11.76%, rgba(1, 28, 39, 0) 91.07%);
+}
+.logo img {
+  width: 179px;
+  height: 26px;
+}
+.left-portion {
+  width: 50%;
+  z-index: 1;
+}
+.right-portion {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  height: 26px;
+  align-items: center;
+  z-index: 1;
+}
+.links {
+  display: flex;
+  width: 534px;
+  height: 21px;
+  list-style: none;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20.75px;
+
+  justify-content: space-between;
+}
+li {
+  cursor: pointer;
+  transition: ease 1s all;
+}
+li:hover {
+  color: rgba(0, 255, 240, 1);
+}
+
+.btn {
+  position: relative;
+  width: 101px;
+  height: 34px;
+  border-radius: 81px;
+  background: var(--CTA-2, linear-gradient(93deg, #0077e5 4.01%, #00ffe0 96%));
+  background-size: 200% 100%;
+  cursor: pointer;
+
+  padding: 2px 10px;
+  border: none;
+  transition: all 1s ease;
+  animation: gradientshift 3s infinite alternate;
+  box-shadow: 0px 6px 10px 0px rgba(0, 119, 229, 0.5),
+    0px 5px 15px -4px rgba(0, 255, 224, 0.5);
+}
+/* .btn:hover{
+  background: linear-gradient(93deg, #00ffe0 4.01% , #0077e5 96%);
+  background-position: right center; 
+
+
+} */
+
+@keyframes gradientshift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.btnText {
+  color: white;
+  font-size: 12px;
+  font-family: "OswaldBtn", sans-serif;
+  font-weight: 700;
+  line-height: 17.78px;
+}
+.about {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./assets/bp/wd-bg2.png");
+  background-size: 100% 100%;
+}
+.watchdive {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./assets/bp/wd-bg3.png");
+  background-size: 100% 100%;
+}
+.features {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./assets/bp/wd-bg4.png");
+  background-size: 100% 100%;
+}
+.signupwrapper {
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 150vh;
+  background-image: url("./assets/bp/wd-bg5.png");
+  background-size: cover;
+}
+.signupsection {
+  width: 1092px;
+  height: 401px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  align-items: center;
+}
+.text1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 38px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.text2 {
+  font-family: "RobotoRegular", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  margin-top: 10px;
+}
+label {
+  font-family: "iBmplanks", sans-serif;
+  font-weight: 500;
+  font-size: 13.04px;
+  line-height: 16.96px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+}
+.fields {
+  display: flex;
+  gap: 35px;
+}
+.submitbtn {
+  display: flex;
+  justify-content: center;
+}
+.btn2 {
+  margin-top: 100px;
+  width: 326px;
+  height: 42px;
+  background: var(--CTA-2, linear-gradient(93deg, #0077e5 4.01%, #00ffe0 96%));
+  border: none;
+  border-radius: 25px;
+  background-size: 200% 100%;
+  cursor: pointer;
+  transition: all 1s ease;
+
+  color: white;
+}
+.btn2:hover {
+  background: linear-gradient(93deg, #00ffe0 4.01%, #0077e5 96%);
+  background-position: right center;
+}
+.forminput {
+  width: 326px;
+  height: 42px;
+  display: flex;
+
+  flex-direction: column;
+}
+
+input {
+  margin-top: 20px;
+  position: relative;
+  background: transparent;
+  padding: 10px 2px;
+  border: none;
+  border-bottom: white solid 1px;
+  color: white;
+  outline: none;
+}
+.submitText {
+  font-family: "RobotoMedium", sans-serif;
+  font-weight: 500;
+  font-size: 14.7px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  color: #eaf4f8;
+}
+footer {
+  width: 100%;
+  padding-left: 47px;
+  padding-right: 47px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 230px;
+}
+.portfolio {
+  width: 50%;
+}
+
+.logocopyright {
+  display: flex;
+  flex-direction: column;
+  /* text-align: center; */
+  width: 137px;
+  height: 20px;
+  gap: 5px;
+}
+.address {
+  margin-top: 40px;
+  width: 311px;
+  height: 90px;
+}
+.address1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14.63px;
+}
+.address2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14.63px;
+  margin-top: 20px;
+}
+.footertext {
+  font-family: "Montserratregular", sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+  letter-spacing: 0;
+  margin-top: 5px;
+}
+
+.social {
+  display: flex;
+  justify-content: space-between;
+  width: 105.33px;
+  align-items: center;
+  height: 22px;
+  margin-top: 45px;
+  cursor: pointer;
+}
+.social:hover{
+
+  color: white;
+}
+.link_col {
+  width: 50%;
+  display: flex;
+  justify-content: end;
+  text-align: right;
+ 
+}
+.list {
+  width: 157px;
+  height: 155px;
+  list-style: none;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: normal;
+  letter-spacing: 0;
+}
+.num{
+  margin-left: 25px;
+}
