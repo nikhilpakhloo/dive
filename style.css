@@ -15,6 +15,10 @@
   src: url("fonts/Montserrat/Montserrat-Bold.ttf");
 }
 @font-face {
+  font-family: "MontserratMedium";
+  src: url("fonts/Montserrat/Montserrat-Medium.ttf");
+}
+@font-face {
   font-family: "Oswald";
   src: url("fonts/Oswald/Oswald-Medium.ttf");
 }
@@ -82,7 +86,7 @@
   text-shadow: 3px 3px 10px #000000;
 }
 .divepara {
-  font-family: "Montserratregular", sans-serif;
+  font-family: "MontserratMedium", sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 21.94px;
@@ -105,15 +109,17 @@
   line-height: normal;
 }
 
-.scrollicon img{
-  animation: bounce 1s infinite  ;
+.scrollicon img {
+  cursor: pointer;
+  animation: bounce 1s infinite;
 }
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0); 
+  0%,
+  100% {
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(-5px); 
+    transform: translateY(-5px);
   }
 }
 .bgimg {
@@ -124,14 +130,17 @@
 }
 nav {
   display: flex;
-  position: absolute;
+  position: fixed;
+  top: 0;
   padding: 34px 33px;
   justify-content: space-between;
   width: 100%;
+  align-items: center;
 
   height: 35px;
   z-index: 1;
 }
+
 .left-section {
   width: 20%;
 
@@ -272,8 +281,129 @@ footer {
 .num {
   margin-left: 25px;
 }
+
+@keyframes borderAnimation {
+  from {
+    width: 0;
+    left: 100%;
+  }
+  to {
+    width: 100%;
+    left: 0;
+  }
+}
+
 .list li:hover,
 .list li:hover .num {
   color: rgba(0, 255, 240, 1);
   transition: ease 1s all;
+  position: relative;
+}
+
+.list li:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  right: 0;
+  width: 0;
+
+  height: 2px;
+  background-color: rgba(0, 255, 240, 1);
+  animation: borderAnimation 1s ease forwards;
+}
+.signup {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.signupsection {
+  position: absolute;
+  top: 18%;
+  width: 1092px;
+  height: 401px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.text1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 38px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.text2 {
+  font-family: "RobotoRegular", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  margin-top: 10px;
+}
+label {
+  font-family: "iBmplanks", sans-serif;
+  font-weight: 500;
+  font-size: 13.04px;
+  line-height: 16.96px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+}
+.fields {
+  display: flex;
+  gap: 35px;
+}
+.submitbtn {
+  display: flex;
+  justify-content: center;
+}
+.btn2 {
+  margin-top: 100px;
+  width: 326px;
+  height: 42px;
+  background: var(--CTA-2, linear-gradient(93deg, #0077e5 4.01%, #00ffe0 96%));
+  border: none;
+  border-radius: 25px;
+  background-size: 200% 100%;
+  cursor: pointer;
+  transition: all 1s ease;
+
+  color: white;
+}
+.btn2:hover {
+  background: linear-gradient(93deg, #00ffe0 4.01%, #0077e5 96%);
+  background-position: right center;
+}
+.forminput {
+  width: 326px;
+  height: 42px;
+  display: flex;
+
+  flex-direction: column;
+}
+input {
+  margin-top: 20px;
+  position: relative;
+  background: transparent;
+  padding: 10px 2px;
+  border: none;
+  border-bottom: white solid 1px;
+  color: white;
+  outline: none;
+}
+.submitText {
+  font-family: "RobotoMedium", sans-serif;
+  font-weight: 500;
+  font-size: 14.7px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  color: #eaf4f8;
 }
