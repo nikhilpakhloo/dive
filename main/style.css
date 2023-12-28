@@ -97,11 +97,11 @@ nav::before {
 
   justify-content: space-between;
 }
-li {
+.links li {
   cursor: pointer;
   transition: ease 1s all;
 }
-li:hover {
+.links li:hover {
   color: rgba(0, 255, 240, 1);
 }
 
