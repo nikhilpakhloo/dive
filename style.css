@@ -127,6 +127,9 @@
   width: 100%;
   height: auto;
   z-index: -3;
+  background-size: cover;
+  background-repeat: no-repeat; /* Prevents image repetition */
+  background-position: center;
 }
 nav {
   display: flex;
