@@ -675,7 +675,8 @@ input {
 
 }
 .productimg-wrapper img {
-  width: 750px;
+  /* width: 800px; */
+  overflow: hidden;
 }
 .feature{
   position: relative;
