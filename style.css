@@ -64,7 +64,15 @@
 .hero {
   position: relative;
 }
-
+.overlay
+{
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 289px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #000 11.76%, rgba(1, 28, 39, 0.00) 91.07%);
+}
 .heroimg {
   position: absolute;
   top: 380px;
@@ -187,10 +195,11 @@
 }
 
 .bgimg {
+
   display: block;
   width: 100vw;
   height: auto;
-  z-index: -3;
+  /* z-index: -1; */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -519,6 +528,15 @@ input {
   color: white;
   outline: none;
 }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 .about {
   position: relative;
 }
@@ -672,13 +690,12 @@ input {
   align-items: center;
   width: 80%;
   height: 80%;
-
 }
 .productimg-wrapper img {
-  /* width: 800px; */
   overflow: hidden;
+  filter: drop-shadow(10px 10px 10px #000);
 }
-.feature{
+.feature {
   position: relative;
 }
 .feature-container {
@@ -690,27 +707,29 @@ input {
   justify-content: space-between;
   width: 100%;
 }
-.left-feature{
+.left-feature {
   display: flex;
   justify-content: left;
   width: 50%;
   align-items: center;
-
 }
-.right-feature{
+.left-feature img {
+  filter: drop-shadow(10px 10px 10px #000);
+}
+.right-feature {
   display: flex;
-  justify-content: start ;
+  justify-content: start;
   width: 50%;
   align-items: center;
-  padding: 60px;
+  padding: 40px;
 }
-.featuretext{
+.featuretext {
   display: flex;
   flex-direction: column;
   margin-top: -80px;
 }
-.productName{
-  width: auto ;
+.productName {
+  width: auto;
   height: 49px;
   text-shadow: 0px 0px 22.6px #000000;
   font-family: "MontserratBold", sans-serif;
@@ -718,14 +737,12 @@ input {
   font-size: 40px;
   letter-spacing: 11.6px;
   line-height: normal;
-
 }
-.Productfeature{
+.Productfeature {
   width: auto;
   font-family: "MontserratMedium", sans-serif;
   font-weight: 500;
   font-size: 24px;
   letter-spacing: 6.72px;
   line-height: normal;
-
 }
