@@ -63,7 +63,7 @@
 }
 .hero {
   position: relative;
-}
+overflow: hidden;}
 .overlay
 {
   position: absolute;
@@ -78,6 +78,7 @@
   top: 380px;
   left: 50%;
   transform: translate(-50%, -50%);
+  
 }
 .herocontainer {
   position: absolute;
@@ -247,13 +248,16 @@ nav {
   font-size: 14px;
   line-height: 20.75px;
 }
-li {
+li a {
   cursor: pointer;
   transition: ease 0.35s all;
 }
-li:hover {
+li a:hover {
   color: rgba(0, 255, 240, 1);
   text-shadow: 0 0 10px rgba(0, 255, 240, 1);
+}
+li a{
+  text-decoration: none;
 }
 .btn {
   position: relative;
@@ -585,6 +589,8 @@ input[type="number"] {
   display: flex;
   justify-content: right;
   width: 50%;
+  overflow: hidden  ;
+
 }
 .rectangle {
   width: 706px;
@@ -596,7 +602,7 @@ input[type="number"] {
   box-shadow: 0px 38px 58.3px -10px #000000;
   backdrop-filter: blur(25px) brightness(100%);
   -webkit-backdrop-filter: blur(25px) brightness(100%);
-  padding: 50px 60px;
+  padding: 50px  60px;
 }
 .head-wrapper {
   display: flex;
