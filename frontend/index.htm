@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watch Dive</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollToPlugin.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <div class="container">
+      <nav id="stickyNav">
+        <div class="left-section">
+          <img src="./assets/bp/diveroid-logo.svg" alt="" />
+        </div>
+
+        <div class="right-section">
+          <ul class="headerlink">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#watch"> Watch Dive</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="">Product Gallery</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+
+          <button class="btn"><span class="signuptext">SIGN UP</span></button>
+        </div>
+      </nav>
+      <script>
+        function scrollToHash(hash, e) {
+          const elem = hash ? document.querySelector(hash) : false;
+          if (elem) {
+            if (e) e.preventDefault();
+            let offsetY = 0; 
+            if (hash === "#contact") {
+              offsetY = -20;
+            } else {
+              offsetY = -150;
+            }
+            gsap.to(window, {
+              duration: 1,
+              scrollTo: { y: elem, offsetY: offsetY },
+              ease: "power2.inOut",
+            });
+          }
+        }
+
+        document.querySelectorAll("a[href^='#']").forEach((a) => {
+          a.addEventListener("click", (e) => {
+            scrollToHash(a.getAttribute("href"), e);
+          });
+        });
+      </script>
+
+      <div class="hero" id="hero">
+        <img src="./assets/bp/WD - BG1.png" alt="" class="bgimg" />
+        <div class="overlay"></div>
+        <img
+          class="heroimg"
+          src="./assets/img/heroimg.svg"
+          alt="./assets/img/heroimg.svg"
+          width="1150px"
+          height="1000px"
+        />
+        <div class="herocontainer">
+          <h1 class="divetext">WATCH DIVE</h1>
+          <p class="divepara">
+            Experience the ocean from a different perspective
+          </p>
+
+          <div class="scrollicon">
+            <p>Scroll to start diving</p>
+            <div class="scrollarrow">
+              <img src="./assets/img/downarrow1.svg" alt="" class="image1" />
+              <img
+                src="./assets/img/downarrow.svg"
+                alt=""
+                class="image2"
+                style="position: absolute; bottom: 0"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about" id="about">
+        <img src="./assets/bp/WD - BG2.png" alt="" class="bgimg" />
+        <div class="aboutcontainer">
+          <div class="left-about">
+            <p class="Diveroid-Presents">
+              <span class="text-wrapper">"DIVEROID presents the</span>
+              <span class="span">&nbsp;</span>
+              <span class="text-wrapper-2"> Beauty</span>
+              <span class="span"> &nbsp; </span>
+              <span class="text-wrapper"
+                >of<br />
+                the Underwater to the world."</span
+              >
+            </p>
+          </div>
+          <div class="right-about">
+            <div class="rectangle">
+              <div class="head-wrapper">ABOUT US</div>
+              <div class="para-wrapper">
+                Artisan & Ocean was founded in 2013 by a team of experienced
+                divers on a mission to make SCUBA diving safe, easy and fun with
+                its compact and affordable diving gear device, DIVEROID.
+                DIVEROID provides critical safety information for diving. This
+                all-in-one solution measures not only depth, dive duration and
+                NDL to prevent accidents and decompression sickness, but also
+                offers underwater camera, compass and auto-synced logbook
+                functions. <br />
+                <br />
+                Experience the dramatic moment with DIVEROID.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product" id="watch">
+        <img src="./assets/bp/WD - BG3.png" alt="" class="bgimg" />
+
+        <div class="product-container">
+          <div class="left-product">
+            <div class="rectangle1">
+              <div class="head-wrapper1">WATCH DIVE</div>
+              <div class="para-wrapper1">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Quisquam cupiditate iusto quidem harum. Iusto sit deserunt
+                animi? Provident reprehenderit, temporibus beatae deserunt, sunt
+                laudantium odit rem voluptas tempore, quis dignissimos quae quo
+                ab vitae modi ipsam soluta. Quaerat consequuntur repellendus
+                accusamus. Ratione asperiores possimus <br />
+                laboriosam sed nesciunt sunt nisi labore architecto repellendus
+                illum adipisci doloribus deleniti enim, ipsa voluptas? Eos
+                possimus dolor libero! Labore ut error sed rerum voluptas, quasi
+                libero consectetur quo nobis voluptatem recusandae impedit
+                voluptatibus nostrum earum rem hic porro fugiat ad dignissimos
+                quidem maxime nam. Ad ullam asperiores perspiciatis, saepe
+                labore <br />itaque recusandae ea fugit cupiditate accusamus
+                aspernatur rem totam odio, dignissimos voluptatem quas
+                consectetur est laborum explicabo quod soluta a natus? Maiores
+                doloremque quae laboriosam dolorem sapiente repudiandae
+                perspiciatis provident natus magni temporibus laudantium fuga
+                molestias <br />veritatis modi assumenda expedita enim hic,
+                optio, magnam exercitationem asperiores ratione? Nisi saepe hic
+                eaque, optio quia veniam itaque.
+                <br />
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque
+                porro earum qui accusamus ut temporibus tempore amet maiores
+                reprehenderit sit! Exercitationem quisquam porro dolorum iusto
+                laboriosam laudantium et, nihil dolor!
+              </div>
+            </div>
+          </div>
+          <div class="right-product">
+            <div class="productimg-wrapper">
+              <img src="./assets/img/WatchDive 1.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature" id="features">
+        <img src="./assets/bp/WD - BG4.png" alt="" class="bgimg" />
+        <div class="feature-container">
+          <div class="left-feature">
+            <img src="./assets/img/WatchDive 1.svg" alt="" width="950" />
+          </div>
+          <div class="right-feature">
+            <div class="featuretext">
+              <span class="productName">WATCH DIVE</span>
+              <span class="Productfeature">Features</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="signup" id="contact">
+        <img src="./assets/bp/WD - BG5.png" alt="" class="bgimg" />
+        <div class="signupsection">
+          <div class="signuptext">
+            <p class="text1">Sign Up for the Watch Dive Experience</p>
+
+            <p class="text2">Get the First mover Discount</p>
+          </div>
+
+          <form id="signupForm">
+            <div class="fields">
+              <div class="forminput">
+                <label for="">Full Name</label>
+                <input type="text" name="name" />
+              </div>
+              <div class="forminput">
+                <label for="">Email</label>
+                <input type="email" name="email" />
+              </div>
+              <div class="forminput">
+                <label for="">Contact Number</label>
+                <input type="number" name="phone" />
+              </div>
+            </div>
+            <div class="submitbtn">
+              <button type="submit" class="btn2">
+                <span class="submitText">Sign Up</span>
+              </button>
+            </div>
+          </form>
+          <script>
+            document.getElementById('signupForm').addEventListener('submit', async function(event) {
+              event.preventDefault();
+              
+              const form = event.target;
+              const formData = new FormData(form);
+              const userData = Object.fromEntries(formData.entries());
+              
+              try {
+                const response = await fetch('http://localhost:5000/api/users', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(userData)
+                });
+          
+                if (response.ok) {
+                  const newUser = await response.json();
+                  console.log('User created:', newUser);
+                } else {
+                  const errorData = await response.json();
+                  console.error('Error:', errorData);
+                }
+              } catch (error) {
+                console.error('Error:', error);
+              }
+            });
+          </script>
+        </div>
+      </div>
+      <footer>
+        <div class="left-footer">
+          <div class="logoc">
+            <img src="./assets/bp/diveroid-logo.svg" alt="" />
+            <span class="footertext">© 2022 Artisan&Ocean </span>
+          </div>
+          <div class="address">
+            <p class="address1">
+              HQ Address: 4F, 23-13, Eonju-ro 97-gil, <br />
+              Gangnam-gu, Seoul,<br />
+              Republic of Korea <br />
+            </p>
+
+            <p class="address2">
+              Operating Hours: 10:00 AM - 05:00 PM KST. <br />
+              Closed on Saturdays, Sundays, and public holidays
+            </p>
+          </div>
+          <div class="social">
+            <img src="./assets/img/FB (1).svg" alt="" />
+            <img src="./assets/img/Insta (1).svg" alt="" />
+            <img src="./assets/img/YT (1).svg" alt="" />
+          </div>
+        </div>
+        <div class="link_col">
+          <ul class="list">
+            <li>About Us <span class="num">01</span></li>
+            <li>Watch Dive <span class="num">02</span></li>
+            <li>Features <span class="num">03</span></li>
+            <li>Product Gallery <span class="num">04</span></li>
+            <li>Contact Us <span class="num">05</span></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
