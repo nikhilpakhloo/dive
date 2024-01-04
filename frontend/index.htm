@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
@@ -25,10 +26,14 @@
             <li><a href="#watch"> Watch Dive</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="">Product Gallery</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="">Contact Us</a></li>
           </ul>
 
-          <button class="btn"><span class="signuptext">SIGN UP</span></button>
+          <a href="#contact"
+            ><button class="btn">
+              <span class="signuptext"> SIGN UP</span>
+            </button></a
+          >
         </div>
       </nav>
       <script>
@@ -36,7 +41,7 @@
           const elem = hash ? document.querySelector(hash) : false;
           if (elem) {
             if (e) e.preventDefault();
-            let offsetY = 0; 
+            let offsetY = 0;
             if (hash === "#contact") {
               offsetY = -20;
             } else {
@@ -187,56 +192,172 @@
 
             <p class="text2">Get the First mover Discount</p>
           </div>
-
           <form id="signupForm">
             <div class="fields">
               <div class="forminput">
-                <label for="">Full Name</label>
-                <input type="text" name="name" />
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required />
+                <span id="nameError" style="color: red"></span>
               </div>
               <div class="forminput">
-                <label for="">Email</label>
-                <input type="email" name="email" />
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+                <span id="emailError" style="color: red"></span>
               </div>
               <div class="forminput">
-                <label for="">Contact Number</label>
-                <input type="number" name="phone" />
+                <label for="phone">Contact Number</label>
+                <input
+                  type="number"
+                  id="phone"
+                  name="phone"
+                  pattern="[0-9]{10}"
+                  required
+                />
+                <span id="phoneError" style="color: red"></span>
               </div>
             </div>
             <div class="submitbtn">
-              <button type="submit" class="btn2">
+              <button type="button" id="submitBtn" class="btn2">
                 <span class="submitText">Sign Up</span>
               </button>
             </div>
           </form>
+
           <script>
-            document.getElementById('signupForm').addEventListener('submit', async function(event) {
-              event.preventDefault();
-              
-              const form = event.target;
-              const formData = new FormData(form);
-              const userData = Object.fromEntries(formData.entries());
-              
-              try {
-                const response = await fetch('http://localhost:5000/api/users', {
-                  method: 'POST',
-                  headers: {
-                    'Content-Type': 'application/json'
-                  },
-                  body: JSON.stringify(userData)
-                });
-          
-                if (response.ok) {
-                  const newUser = await response.json();
-                  console.log('User created:', newUser);
-                } else {
-                  const errorData = await response.json();
-                  console.error('Error:', errorData);
-                }
-              } catch (error) {
-                console.error('Error:', error);
+            const nameInput = document.getElementById("name");
+            const emailInput = document.getElementById("email");
+            const phoneInput = document.getElementById("phone");
+
+            const nameError = document.getElementById("nameError");
+            const emailError = document.getElementById("emailError");
+            const phoneError = document.getElementById("phoneError");
+
+            function displayErrorMessage(errorElement, errorMessage) {
+              errorElement.textContent = errorMessage;
+              setTimeout(() => {
+                errorElement.textContent = "";
+              }, 2000);
+            }
+
+            function validateName() {
+              const name = nameInput.value;
+              const nameRegex = /^[A-Za-z]+(?:\s[A-Za-z]+)+$/;
+
+              if (!name) {
+                displayErrorMessage(nameError, "Please enter the name.");
+              } else if (!nameRegex.test(name)) {
+                displayErrorMessage(
+                  nameError,
+                  "Please enter a valid first and last name."
+                );
+              } else {
+                nameError.textContent = "";
               }
-            });
+            }
+
+            function validateEmail() {
+              const email = emailInput.value;
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+              if (!email) {
+                displayErrorMessage(emailError, "Please enter the email.");
+              } else if (!emailRegex.test(email)) {
+                displayErrorMessage(
+                  emailError,
+                  "Please enter a valid email address."
+                );
+              } else {
+                emailError.textContent = "";
+              }
+            }
+
+            function validatePhone() {
+              const phone = phoneInput.value;
+              const phoneRegex = /^\d{10}$/;
+
+              if (!phone) {
+                displayErrorMessage(
+                  phoneError,
+                  "Please enter the phone number."
+                );
+              } else if (!phoneRegex.test(phone)) {
+                displayErrorMessage(
+                  phoneError,
+                  "Please enter a valid 10-digit phone number."
+                );
+              } else {
+                phoneError.textContent = "";
+              }
+            }
+
+            nameInput.addEventListener("input", validateName);
+            emailInput.addEventListener("input", validateEmail);
+            phoneInput.addEventListener("input", validatePhone);
+
+            document
+              .getElementById("submitBtn")
+              .addEventListener("click", async function () {
+                const name = nameInput.value;
+                const email = emailInput.value;
+                const phone = phoneInput.value;
+
+                validateName();
+                validateEmail();
+                validatePhone();
+
+                if (
+                  nameError.textContent ||
+                  emailError.textContent ||
+                  phoneError.textContent
+                ) {
+                  return;
+                }
+
+                const userData = { name, email, phone };
+
+                try {
+                  const response = await fetch(
+                    "http://localhost:5000/api/users",
+                    {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                      body: JSON.stringify(userData),
+                    }
+                  );
+
+                  if (response.ok) {
+                    const newUser = await response.json();
+                    Swal.fire({
+                      icon: "success",
+                      title: "Registration Successful!",
+                      text: "User created successfully!",
+                      confirmButtonText: "OK",
+                    }).then(() => {
+                      console.log("User created:", newUser);
+                    });
+                  } else {
+                    const errorData = await response.json();
+                    Swal.fire({
+                      icon: "error",
+                      title: "Registration Failed!",
+                      text: `${JSON.stringify(errorData)}`,
+                      confirmButtonText: "OK",
+                    });
+                    console.error("Error:", errorData);
+                  }
+                } catch (error) {
+                  Swal.fire({
+                    icon: "error",
+                    title: "Registration Failed!",
+                    text: `${error.message}`,
+                    confirmButtonText: "OK",
+                  
+                  });
+                  console.error("Error:", error);
+                }
+              });
           </script>
         </div>
       </div>

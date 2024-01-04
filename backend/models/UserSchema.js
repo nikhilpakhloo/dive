@@ -22,6 +22,14 @@ const userSchema = new mongoose.Schema(
       unique: true,
       required: true,
     },
+    refferalcode: {
+      type: String,
+      unique: true,
+    },
+    totalpoints:{
+      type:Number,
+      default:null
+    }
   },
   { timestamps: true }
 );

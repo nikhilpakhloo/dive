@@ -519,14 +519,15 @@ form {
   width: 326px;
   height: 42px;
   display: flex;
+  
 
   flex-direction: column;
 }
 input {
-  margin-top: 20px;
+  margin-top: 30px;
   position: relative;
   background: transparent;
-  padding: 10px 2px;
+  padding: 5px 5px;
   border: none;
   border-bottom: white solid 1px;
   color: white;
@@ -752,3 +753,4 @@ input[type="number"] {
   letter-spacing: 6.72px;
   line-height: normal;
 }
+
